@@ -1,0 +1,208 @@
+Importing fonts from google fonts
+======================================
+choose the font you like and choose at a minimum font weight of 400 or higher.
+1)
+pick a 400, a bold one (700 in this case ) and something in between like 500, pick all the ones you like
+2) 
+copy the link 
+3) 
+link it in your html's head portion BEFORE css.style file
+basically just paste it before style sheet link in the head of html.
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+4)
+set the font family in css style sheet , in the body portion, you can copy that too from the same google fonts page with the font links.
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+
+
+Font -sizes
+============
+resource: 
+type-scale.com 
+
+Try to have preset sizes you use , you can use the above resource page and use this:
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+
+choosing style elements to change om dev-tools on Chrome
+============================================================
+
+click on what you'd like to change and press option key to change it. up and down arrow keys add or substric one or just enter the number.
+
+
+spacing system 
+===============
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+
+WEB DESIGN RULES # 2 : COLORS
+__________________________________
+
+btn links always in this order: 
+
+.btn:link,
+.btn:visited {
+  background-color: #407f7f;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  display: inline-block; /*so it wouldn't occupy all the space */
+  font-weight: 500;
+  font-size: 18px;
+}
+.btn:hover,
+btn:active {
+  background-color: #649797;
+}
+
+checking contrast between background color and text color
+==========================================================
+
+use coolers contrast checker
+
+
+Adding a colored border to the bottom of our page
+=====================================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+IMPLEMENTING ICONS
+______________________________________________________________
+
+keywords
+===========
+fill: #color;   // changes color of solid svg icons
+stroke: #color; // changes color of outline svg icons(lines)
+
+In this lesson we use Heroicons webpage.
+
+The best way of adding icons
+==============================
+the easiest way is to just copying the svg code and just paste it in the right spot in our html:
+
+ <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"
+              />
+            </svg>
+
+Resizing the icons and changing colors
+========================================
+use stroke property to change the color of the icon with lines(outline icons)
+use fill propoerty to change the color of the icons that are solid
+you can also use both proprties on one icon.
+
+
+
+Adding shadows 
+===================
+One common use for shadows is to add shadows to product cards.
+That's what we are doing here.
+
+
+
+
+
+offset
+=======
+
+ means length
+ We like the light  source on a website come from the top, which means the horizontal offset has to be set to 0.
+
+blur value
+============
+ the larger the blur value , the more blured 
+
+
+scale value (radius or breadth)
+================================
+is optional and not used , the defualt is 0
+0 is prefered 
+
+color
+========
+for shadows we use rgba value and the opacity should be max 0.1
+
+
+keywords
+===========
+
+box-shadow: horizontal offset vertical offset  blur value  scale value color
+
+ex:
+.chair-box {
+  padding: 24px;
+  box-shadow: 0 20px 20px 10px rgba(0,0,0, 0.1);
+}
+
+figure element in html       // common element to be used for cards 
+                            
+
+<figure class="chair" ></figure>
+
+articel element in html   // can also be used for cards
+
+text-shadow   // shadow effect for text, best for text over an image
+
+text-shadow:  horizontal offset  vertical offset  blur value   color
+
+
+shadows on text 
+=================
+
+veru similar to shadows on texts, everything is the same as box-shadw , the only difference is that the text-shadow does not have the fourth prooerty which is the scale(or breadth)
+generally it doesn't look good, but it's useful for situations when we have text over an image
+
+
+BORDER RADIUS
+================
+
+keywords 
+==========
+border-radius: # of px;  //the larger the number, the more rounded the corners
+
+border-bottom-left-radius: 0;   //controlling individual borders, 0 is square
+
+border-top-right-radius: 0; //controlling individual borders, 0 is square
+
+
+
+Making a squre element completely round 
+==========================================
+
+1)
+This only works on square elements.setting border radius to 50%:
+border-radius: 50%;
+This turns rectangle shapes to oval.
+
+2)
+In other shapes like rectangle specify a number for border radius that is larger than the height of the shape.You can just use a very large numbe rin oixel units like 100px 0r even 1000 px.
